@@ -1,0 +1,44 @@
+/* CSS Document */
+
+body
+{
+	background-color: #D3D3D3
+}
+.center
+{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.button {
+	background-color: #868686;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+div.header
+{
+	font-size: 150%;
+}
+div.barcode
+{
+	padding: 15px;
+}
+div.manual
+{
+	padding: 15px;
+}
+div.time
+{
+	font-size: 120%;
+	width: 100px;
+}

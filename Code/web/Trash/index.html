@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>main index</title>
+		<script type="text/javascript" src="/eel.js"></script>
+		<body>
+			text
+			<p>scan barcode</p>
+			<input type="text" id="barcodeText" name="barcodeText" autofocus onkeypress=runScript(event) />
+			<p id="timeText">no time</p>
+			<script>
+
+				function runScript(event)
+				{
+    				//See notes about 'which' and 'key'
+					if (event.keyCode == 13)
+					{
+						//get value
+						var barNum = document.getElementById("barcodeText").value;
+						//clear text field
+						//document.getElementById("barcodeText").value = ""
+						//call python function
+
+						//callback function
+						function printNum(time)
+						{
+							console.log("returned " + time)
+							window.open("timer.html","_self")
+							document.getElementById("timeText").innerHTML = time;
+						}
+						console.log("get barnum" + barNum)
+						eel.queryLocalBarcode(barNum)(printNum)
+						
+    				}
+				}
+			</script>
+		</body>
+	</head>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>main</title>
+		<link rel="stylesheet" type="text/css" href="main scripts/main.css">
+		<script type="text/javascript" src="/eel.js"></script>
+		<script type="text/javascript" src="main scripts/main.js"></script>
+	</head>
+
+
+
+	
+	<body>
+		<div class="center">
+			<center>
+				<div class="barcode">
+					<div class="header">Scan Barcode</div>
+					<input type="text" id="barcodeText" name="barcodeText" autofocus onkeypress="barcodeRun(event)">
+				</div>
+				
+				<div class="manual">
+					<div class="time" id="timeText">Enter Time</div>
+					<table>
+						<tr>
+							<td>
+								<button type="button" class="button" onclick="min1()">1mins</button>
+							</td>
+							<td>
+								<button type="button" class="button" onclick="sec30()">30secs</button>
+							</td>
+							<td>
+								<button type="button" class="button" onclick="sec10()">10secs</button>
+							</td>
+							<td>
+								<button type="button" class="button" onclick="sec5()">5secs</button>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<center><button type="button" class="button" onclick="manualRun()">ok</button></center>
+							</td>
+							<td colspan="2">
+								<center><button type="button" class="button" onclick="reset()">reset</button></center>
+							</td>
+						</tr>
+						</tr>
+					</table>
+				</div>
+			</center>
+		</div>
+	</body>
+</html>
