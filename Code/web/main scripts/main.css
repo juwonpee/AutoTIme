@@ -2,7 +2,7 @@
 
 body
 {
-	background-color: #D3D3D3
+	background-color: #8784A7
 }
 .center
 {
@@ -14,7 +14,7 @@ body
 	transform: translate(-50%, -50%);
 }
 .button {
-	background-color: #868686;
+	background-color: #424062;
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -41,4 +41,9 @@ div.time
 {
 	font-size: 120%;
 	width: 100px;
+}
+#status
+{
+	position: absolute;
+	bottom: 0;
 }

@@ -1,4 +1,14 @@
 import eel
+#from gpiozero import Relay, Switch
+
+
+
+
+
+"""relay1 = Relay(10)
+relay2 = Relay(11)
+switch1 = Switch(9)"""
+
 
 eel.init("web")
 eel.start("main.html", block=False, size=(800, 480))
@@ -36,7 +46,21 @@ def getTime():
 def switch(param):
     """turn on or off relays here"""
 
+@eel.expose
+def checkIfOnline():
+    #return 1 if online
+    #return 0 if offline
+    return "0"
+
 '''https://jsfiddle.net/Daniel_Hug/pvk6p/'''
+
+"""
+@eel.expose
+def door(param):
+    # read door pin
+    # 0 is closed
+    # 1 is open
+    """
 
 
 
