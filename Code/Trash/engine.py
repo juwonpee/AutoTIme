@@ -1,12 +1,7 @@
 import eel
-import pymysql as pm
 #from gpiozero import Relay, Switch
 
-import Server1003 as sv
 
-
-sc = sv.Emysql()
-onlineStatus = sc.connect("35.240.152.59",3306,"pi","raspberry","electro_db")
 
 """relay1 = Relay(10)
 relay2 = Relay(11)
@@ -14,7 +9,7 @@ switch1 = Switch(9)"""
 
 
 eel.init("web")
-eel.start("main.html", block=False, size=(480, 8000))
+eel.start("main.html", block=False, size=(480, 800))
 
 
 
@@ -35,15 +30,6 @@ def queryLocalBarcode(barcodeNum):
 @eel.expose
 def queryWebBarcode(barcodeNum):
     """get time      from server"""
-    if sc.is_serial_data_sql(int(barcodeNum)):
-        getData = sc.get_data_serial(int(barcodeNum))
-        if getData[4] == None:
-            setTime(str(str(getData[2])+" "+str(getData[3])))
-            return lastTime
-        else:
-            return str(getData[1])+" "+str(getData[2])+" "+str(getData[3])+" "+str(getData[4])
-    else:
-        return False
 
 @eel.expose
 def setTime(num1):
@@ -60,14 +46,10 @@ def switch(param):
 
 @eel.expose
 def checkIfOnline():
-    if onlineStatus == True:
-        #return 1 if online
-        return "1"
-    elif onlineStatus == False:
-        #return 0 if offline
-        return "0"
+    #return 1 if online
+    #return 0 if offline
+    return "0"
 
-'''https://jsfiddle.net/Daniel_Hug/pvk6p/'''
 
 """
 @eel.expose
