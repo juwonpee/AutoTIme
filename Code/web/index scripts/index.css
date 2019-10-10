@@ -1,0 +1,91 @@
+/* CSS Document */
+
+body {
+    background-color: #222324
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.numberButton {
+    background-color: #222324;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 4px;
+    cursor: pointer;
+    font-family: Bahnschrift;
+    font-weight: lighter;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+}
+
+.numberButton:hover {
+    background: #3c3c3c;
+}
+
+.settingButton {
+    background-color: #222324;
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 0px 0px;
+    cursor: pointer;
+    font-family: Bahnschrift;
+    font-weight: lighter;
+    border-radius: 50px;
+    height: 90px;
+    width: 90px;
+    font-family: Bahnschrift;
+    font-weight: lighter;
+    color: white;
+}
+
+.settingButton:hover {
+    background: #3c3c3c;
+    text-decoration: underline;
+}
+
+.time {
+    color: white;
+    font-family: Bahnschrift;
+    font-weight: lighter;
+    font-size: 50px;
+}
+
+div.header {
+    font-size: 150%;
+}
+
+div.barcode {
+    padding: 15px;
+}
+
+div.manual {
+    padding: 15px;
+}
+
+div.time {
+    font-size: 120%;
+    width: 100px;
+}
+
+#status {
+    position: absolute;
+    bottom: 0;
+}

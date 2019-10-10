@@ -19,7 +19,7 @@ eel.start("main.html", block=False, size=(480, 8000))
 
 
 @eel.expose
-def queryLocalBarcode(barcodeNum):
+def queryLocalBarcode(localBarcodeNum):
     """barcodeNum = barcodeNum + " barcode number returned"
     print(barcodeNum)
     return barcodeNum"""
@@ -28,15 +28,15 @@ def queryLocalBarcode(barcodeNum):
     f1 = timeFile.readlines()
     for lines in f1:
         line = lines.split(" ")
-        if line[0] == barcodeNum:
+        if line[0] == localBarcodeNum:
             setTime(line[1] + " " + line[2])
             return lastTime
 
 @eel.expose
-def queryWebBarcode(barcodeNum):
+def queryWebBarcode(webBarcodeNum):
     """get time      from server"""
-    if sc.is_serial_data_sql(int(barcodeNum)):
-        getData = sc.get_data_serial(int(barcodeNum))
+    if sc.is_serial_data_sql(int(webBarcodeNum)):
+        getData = sc.get_data_serial(int(webBarcodeNum))
         if getData[4] == None:
             setTime(str(str(getData[2])+" "+str(getData[3])))
             return lastTime

@@ -2,6 +2,7 @@ var seconds = 0
 var minutes = 0
 var timeText = ""
 var online = "1"
+var timeString = ""
 
 checkOnline()
 async function checkOnline() {
@@ -80,6 +81,73 @@ function min1() {
     document.getElementById("timeText").innerHTML = minutes.toString() + " : " + seconds.toString();
 }
 
+function add0() {
+    if (length(timeString) <= 3) {
+        timeString = "0" + timeString
+    }
+}
+
+function add1() {
+    if (length(timeString) <= 3) {
+        timeString = "1" + timeString
+    }
+}
+
+function add2() {
+    if (length(timeString) <= 3) {
+        timeString = "2" + timeString
+    }
+}
+
+function add3() {
+    if (length(timeString) <= 3) {
+        timeString = "3" + timeString
+    }
+}
+
+function add4() {
+    if (length(timeString) <= 3) {
+        timeString = "4" + timeString
+    }
+}
+
+function add5() {
+    if (length(timeString) <= 3) {
+        timeString = "5" + timeString
+    }
+}
+
+function add6() {
+    if (length(timeString) <= 3) {
+        timeString = "6" + timeString
+    }
+}
+
+function add7() {
+    if (length(timeString) <= 3) {
+        timeString = "7" + timeString
+    }
+}
+
+function add8() {
+    if (length(timeString) <= 3) {
+        timeString = "8" + timeString
+    }
+}
+
+function add9() {
+    if (length(timeString) <= 3) {
+        timeString = "9" + timeString
+    }
+
+}
+
+function formatTime() {
+    if (length(timeString) > 1) {
+        document.getElementById("timeText").innerHTML = ;
+    }
+
+}
 //function setTime()
 //{
 //    window.open("timer.html","_self");
