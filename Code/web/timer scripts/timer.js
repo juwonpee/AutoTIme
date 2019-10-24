@@ -15,7 +15,7 @@ function timerTrack()
 	{
 		if (minutes == 0)
 		{
-			window.open("main.html","_self");
+			window.open("index.html","_self");
 		}
 		else
 		{
@@ -50,5 +50,5 @@ function start()
 }
 function reset()
 {
-	window.open("main.html", "_self")
+	window.open("index.html", "_self")
 }

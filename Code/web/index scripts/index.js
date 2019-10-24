@@ -1,5 +1,7 @@
 var seconds = 0
+var secondString = ""
 var minutes = 0
+var minuteString = ""
 var timeText = ""
 var online = "1"
 var timeString = ""
@@ -45,107 +47,95 @@ function barcodeRun(event) {
     }
 }
 
-function reset() {
-    window.open("main.html", "_self")
-}
-
-function sec5() {
-    seconds = seconds + 5
-    if (seconds >= 60) {
-        seconds = 0
-        minutes = minutes + 1
-    }
-    document.getElementById("timeText").innerHTML = minutes.toString() + " : " + seconds.toString();
-}
-
-function sec10() {
-    seconds = seconds + 10
-    if (seconds >= 60) {
-        seconds = 0
-        minutes = minutes + 1
-    }
-    document.getElementById("timeText").innerHTML = minutes.toString() + " : " + seconds.toString();
-}
-
-function sec30() {
-    seconds = seconds + 30
-    if (seconds >= 60) {
-        seconds = 0
-        minutes = minutes + 1
-    }
-    document.getElementById("timeText").innerHTML = minutes.toString() + " : " + seconds.toString();
-}
-
-function min1() {
-    minutes = minutes + 1
-    document.getElementById("timeText").innerHTML = minutes.toString() + " : " + seconds.toString();
-}
 
 function add0() {
-    if (length(timeString) <= 3) {
-        timeString = "0" + timeString
+    if (timeString.length <= 3) {
+        timeString = timeString + "0";
     }
+    formatTime();
+    console.log("pass formatTime")
 }
 
 function add1() {
-    if (length(timeString) <= 3) {
-        timeString = "1" + timeString
+    if (timeString.length <= 3) {
+        timeString = "1" + timeString;
     }
+    formatTime();
 }
 
 function add2() {
-    if (length(timeString) <= 3) {
-        timeString = "2" + timeString
+    if (timeString.length <= 3) {
+        timeString = "2" + timeString;
     }
+    formatTime();
 }
 
 function add3() {
-    if (length(timeString) <= 3) {
-        timeString = "3" + timeString
+    if (timeString.length <= 3) {
+        timeString = "3" + timeString;
     }
+    formatTime();
 }
 
 function add4() {
-    if (length(timeString) <= 3) {
-        timeString = "4" + timeString
+    if (timeString.length <= 3) {
+        timeString = "4" + timeString;
     }
+    formatTime();
 }
 
 function add5() {
-    if (length(timeString) <= 3) {
-        timeString = "5" + timeString
+    if (timeString.length <= 3) {
+        timeString = "5" + timeString;
     }
+    formatTime();
 }
 
 function add6() {
-    if (length(timeString) <= 3) {
-        timeString = "6" + timeString
+    if (timeString.length <= 3) {
+        timeString = "6" + timeString;
     }
+    formatTime();
 }
 
 function add7() {
-    if (length(timeString) <= 3) {
-        timeString = "7" + timeString
+    if (timeString.length <= 3) {
+        timeString = "7" + timeString;
     }
+    formatTime();
 }
 
 function add8() {
-    if (length(timeString) <= 3) {
-        timeString = "8" + timeString
+    if (timeString.length <= 3) {
+        timeString = "8" + timeString;
     }
+    formatTime();
 }
 
 function add9() {
-    if (length(timeString) <= 3) {
-        timeString = "9" + timeString
+    if (timeString.length <= 3) {
+        timeString = "9" + timeString;
     }
-
+    formatTime();
 }
 
 function formatTime() {
-    if (length(timeString) > 1) {
-        document.getElementById("timeText").innerHTML = ;
+    if (timeString.length >= 1) {
+        if (timeString.length == 1 || timeString.length == 2) {
+            second = timeString;
+            minute = "0"
+        }
+        else if (timeString.length == 3) {
+            second = timeString[1] + timeString[0];
+            minute = timeString[2];
+        }
+        else if (timeString.length == 4) {
+            
+            seconds = timeString[1] + timeString[0];
+            minutes = timeString[3] + timeString[2];
+        }
     }
+    document.getElementById("timeText").innerHTML = minutes + " : " + seconds;
 
 }
 //function setTime()
@@ -153,6 +143,11 @@ function formatTime() {
 //    window.open("timer.html","_self");
 //}
 function manualRun() {
-    eel.setTime(minutes.toString() + " " + seconds.toString())()
-    window.open("timer.html", "_self");
+    if (minutes > 60 || seconds >= 59) {
+        document.getElementById("timeText").innerHTML = "Wrong Time!";
+    }
+    else {
+        eel.setTime(minutes + " " + seconds)()
+        window.open("timer.html", "_self");
+    }
 }

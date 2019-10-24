@@ -12,9 +12,9 @@ onlineStatus = sc.connect("35.240.152.59",3306,"pi","raspberry","electro_db")
 relay2 = Relay(11)
 switch1 = Switch(9)"""
 
-
+print("open")
 eel.init("web")
-eel.start("main.html", block=False, size=(480, 8000))
+eel.start("index.html", block=False, size=(480, 800))
 
 
 
