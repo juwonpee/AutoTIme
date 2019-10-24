@@ -151,3 +151,7 @@ function manualRun() {
         window.open("timer.html", "_self");
     }
 }
+function reset()
+{
+	window.open("index.html", "_self")
+}
