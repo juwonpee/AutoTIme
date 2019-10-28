@@ -3,18 +3,20 @@ var secondString = ""
 var minutes = 0
 var minuteString = ""
 var timeText = ""
-var online = "1"
+var online
 var timeString = ""
 
 checkOnline()
 async function checkOnline() {
-    let online = await eel.checkIfOnline()()
+    online = await eel.checkIfOnline()()
     if (online == "1") {
         document.getElementById("status").innerHTML = "online";
     } else if (online == "0") {
         document.getElementById("status").innerHTML = "offline";
     }
-    console.log(online)
+    console.log(online);
+    console.log(typeof online);
+    onelineStauts = online
 }
 
 
@@ -26,15 +28,18 @@ function barcodeRun(event) {
         //get value
         var barNum = document.getElementById("barcodeText").value;
         console.log("get barnum" + barNum)
+        console.log(online)
         if (online == "1") {
             queryOnline()
             async function queryOnline() {
                 eel.queryWebBarcode(barNum)(printNum)
+                console.log("online")
             }
         } else if (online == "0") {
             queryOffline()
             async function queryOffline() {
                 eel.queryLocalBarcode(barNum)(printNum)
+                console.log("offline")
             }
         }
 
