@@ -1,7 +1,5 @@
-var seconds = 0
-var secondString = ""
-var minutes = 0
-var minuteString = ""
+var seconds = "0"
+var minutes = "0"
 var timeText = ""
 var online
 var timeString = ""
@@ -46,8 +44,18 @@ function barcodeRun(event) {
         //callback function
         function printNum(time) {
             console.log("returned " + time)
-            window.open("timer.html", "_self")
-                //document.getElementById("timeText").innerHTML = time;
+            var returnedString = time.split(" ");
+            if (returnedString.length == 2) {
+                minutes = returnedString[0];
+                seconds = returnedString[1];
+            }
+            else if (returnedString.length == 3) {
+                minutes = returnedString[0];
+                seconds = returnedString[1];
+                var name = returnedString[2];
+            }
+            document.getElementById("timeText").innerHTML = minutes + " : " + seconds;
+            document.getElementById("itemName").innerHTML = name;
         }
     }
 }
@@ -126,13 +134,17 @@ function add9() {
 
 function formatTime() {
     if (timeString.length >= 1) {
-        if (timeString.length == 1 || timeString.length == 2) {
-            second = timeString;
-            minute = "0"
+        if (timeString.length == 1) {
+            seconds = timeString;
+            minutes = "0"
+        }
+        else if (timeString.length == 2) {
+            seconds = timeString[1] + timeString [0];
+            minutes = "0"
         }
         else if (timeString.length == 3) {
-            second = timeString[1] + timeString[0];
-            minute = timeString[2];
+            seconds = timeString[1] + timeString[0];
+            minutes = timeString[2];
         }
         else if (timeString.length == 4) {
             

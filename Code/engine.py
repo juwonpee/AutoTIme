@@ -2,7 +2,7 @@ import eel
 import pymysql as pm
 #from gpiozero import Relay, Switch
 
-import Server1003 as sv
+import Server1004 as sv
 
 
 sc = sv.Emysql()
@@ -38,10 +38,9 @@ def queryWebBarcode(webBarcodeNum):
     if sc.is_serial_data_sql(int(webBarcodeNum)):
         getData = sc.get_data_serial(int(webBarcodeNum))
         if getData[4] == None:
-            setTime(str(str(getData[2])+" "+str(getData[3])))
-            return lastTime
+            return str(str(getData[2]) + " " + str(getData[3]))
         else:
-            return str(getData[1])+" "+str(getData[2])+" "+str(getData[3])+" "+str(getData[4])
+            return str(str(getData[2]) + " " + str(getData[3]) + " " + str(getData[4]))
     else:
         return False
 
@@ -66,16 +65,6 @@ def checkIfOnline():
     elif onlineStatus == False:
         #return 0 if offline
         return "0"
-
-'''https://jsfiddle.net/Daniel_Hug/pvk6p/'''
-
-"""
-@eel.expose
-def door(param):
-    # read door pin
-    # 0 is closed
-    # 1 is open
-    """
 
 
 
