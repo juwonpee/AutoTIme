@@ -14,8 +14,8 @@ switch1 = Switch(9)"""
 
 print("open")
 eel.init("web")
-eel.start("index.html", block=False, size=(480, 800))
-
+#eel.start("index.html", block=False, size=(480, 800))
+eel.start("index.html", block=False, cmdline_args=['--start-fullscreen', '--kiosk'])
 
 
 @eel.expose
@@ -29,8 +29,7 @@ def queryLocalBarcode(localBarcodeNum):
     for lines in f1:
         line = lines.split(" ")
         if line[0] == localBarcodeNum:
-            setTime(line[1] + " " + line[2])
-            return lastTime
+            return line[1] + " " + line[2] + " " + line[3]
 
 @eel.expose
 def queryWebBarcode(webBarcodeNum):
