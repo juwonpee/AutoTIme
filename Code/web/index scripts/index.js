@@ -4,6 +4,8 @@ var timeText = ""
 var online
 var timeString = ""
 
+eel.turnOff()()
+
 checkOnline()
 async function checkOnline() {
     online = await eel.checkIfOnline()()

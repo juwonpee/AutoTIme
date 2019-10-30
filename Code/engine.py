@@ -1,6 +1,7 @@
 import eel
 import pymysql as pm
-from gpiozero import GPIO
+from gpiozero import LED
+relay = LED(14)
 
 import Server1030 as sv
 
@@ -54,11 +55,11 @@ def getTime():
 
 @eel.expose
 def turnOn():
-    """turn on or off relays here"""
+    relay.on()
 
 @eel.expose
 def turnOff():
-
+    relay.off()
 
 @eel.expose
 def checkIfOnline():

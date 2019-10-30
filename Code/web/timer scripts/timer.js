@@ -2,7 +2,8 @@ var seconds
 var minutes
 var nIntervID
 
-
+eel.turnOff()()
+eel.turnOn()()
 
 //start timer
 function timerTrack()
@@ -15,6 +16,7 @@ function timerTrack()
 	{
 		if (minutes == 0)
 		{
+			eel.turnOff()()
 			window.open("index.html","_self");
 		}
 		else
@@ -42,13 +44,16 @@ eel.getTime()(setTimer)
 
 function stop()
 {
+	eel.turnOff()()
 	clearInterval(nIntervID);
 }
 function start()
 {
+	eel.turnOn()()
 	nIntervID = setInterval(timerTrack, 1000)
 }
 function reset()
 {
+	eel.turnOff()()
 	window.open("index.html", "_self")
 }
