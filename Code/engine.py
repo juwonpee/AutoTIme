@@ -2,7 +2,7 @@ import eel
 import pymysql as pm
 #from gpiozero import Relay, Switch
 
-import Server1004 as sv
+import Server1030 as sv
 
 
 sc = sv.Emysql()
