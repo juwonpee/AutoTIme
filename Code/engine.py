@@ -1,6 +1,6 @@
 import eel
 import pymysql as pm
-#from gpiozero import Relay, Switch
+from gpiozero import GPIO
 
 import Server1030 as sv
 
@@ -53,8 +53,12 @@ def getTime():
     return lastTime
 
 @eel.expose
-def switch(param):
+def turnOn():
     """turn on or off relays here"""
+
+@eel.expose
+def turnOff():
+
 
 @eel.expose
 def checkIfOnline():
