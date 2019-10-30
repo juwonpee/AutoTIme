@@ -55,11 +55,11 @@ def getTime():
 
 @eel.expose
 def turnOn():
-    relay.on()
+    relay.off()
 
 @eel.expose
 def turnOff():
-    relay.off()
+    relay.on()
 
 @eel.expose
 def checkIfOnline():
