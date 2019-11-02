@@ -16,7 +16,7 @@ switch1 = Switch(9)"""
 print("open")
 eel.init("web")
 #eel.start("index.html", block=False, size=(480, 800))
-eel.start("index.html", block=False, cmdline_args=['--start-fullscreen', '--kiosk'])
+eel.start("index.html", block=False, cmdline_args=['--start-fullscreen', '--kiosk', '--password-store=basic'])
 
 
 @eel.expose
